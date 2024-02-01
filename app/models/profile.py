@@ -3,5 +3,6 @@ from typing import List, Optional
 
 class Profile(BaseModel):
     id: Optional[str] = None
-    name: str
-    description: str
+    name: Optional[str] = None
+    description: Optional[str] = None
+    user_id: Optional[str] = None
