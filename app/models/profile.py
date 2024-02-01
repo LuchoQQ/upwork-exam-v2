@@ -6,3 +6,4 @@ class Profile(BaseModel):
     name: Optional[str] = None
     description: Optional[str] = None
     user_id: Optional[str] = None
+    is_favorite: bool = False 

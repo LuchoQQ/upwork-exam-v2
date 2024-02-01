@@ -72,3 +72,15 @@ async def add_profile_to_user_by_id(user_id: str, profile: Profile):
     profiles.append(profile)
 
     return {"message": "Profile added successfully", "user": user.model_dump()}
+
+@router.get("/{user_id}/favorite_profiles")
+async def get_favorite_profiles(user_id: str):
+    # Fetch the user from the database
+    user = await get_user_by_id(user_id)  # Use 'await' here to get the actual user object
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    # Filter and retrieve the user's favorite profiles
+    favorite_profiles = [profile.model_dump() for profile in user.profiles if profile.is_favorite]
+
+    return {"favorite_profiles": favorite_profiles}

@@ -10,12 +10,12 @@ Working FastAPI API with a User and Profile models and schemas.
 4. Deliver a GitHub repository with your solution (it can be private, just give access to @arielaco)
 
 ## Tasks
-- [ ] Create a [User](###User) and [Profile](###Profile) models and schemas 
-- [ ] Develop a REST API exposing CRUD endpoints for both models
-- [ ] Test at least 2 endpoints using pytest (with fixtures)
-- [ ] Point docs to root path
-- [ ] Create requirements file
-- [ ] Add a section on `README.md` with setup (venv), install (pip), run and testing instructions
+- [x] Create a [User](###User) and [Profile](###Profile) models and schemas 
+- [x] Develop a REST API exposing CRUD endpoints for both models
+- [x] Test at least 2 endpoints using pytest (with fixtures)
+- [x] Point docs to root path
+- [x] Create requirements file
+- [x] Add a section on `README.md` with setup (venv), install (pip), run and testing instructions
 
 ### User
 - Email as username
@@ -33,3 +33,29 @@ Working FastAPI API with a User and Profile models and schemas.
 - Implement proper folder structure
 - Validation must be done using Pydantic
 - Use multiple commits (when possible, use conventional commit messages)
+
+## Setup
+
+1. Create a new Anaconda environment with Python:
+   ```bash
+   conda create --upwork-exam-v2 python=3
+
+2. Activate the Anaconda environment:
+    ```bash
+   conda activate upwork-exam-v2
+
+3. Install project dependencies using pip:
+    ```bash
+   pip install -r requirements.txt
+
+## Run
+
+1. To run the project within the Anaconda environment for development in project root directory:
+    ```bash
+   uvicorn app.main:app --reload 
+
+# Testing
+
+1. You can run the test within Anaconda environment using pytest library:
+    ```bash
+    pytest
